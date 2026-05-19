@@ -1,0 +1,33 @@
+2026-05-18 10:14:02 | INFO     | trading_bot | Logging initialised — writing to logs/trading_bot_20260518.log
+2026-05-18 10:14:02 | DEBUG    | trading_bot.client | BinanceFuturesClient initialised (base_url=https://testnet.binancefuture.com)
+
+--- MARKET ORDER ---
+2026-05-18 10:14:03 | INFO     | trading_bot.orders | Placing BUY MARKET order | symbol=BTCUSDT qty=0.01 price=None
+2026-05-18 10:14:03 | INFO     | trading_bot.client | POST /fapi/v1/order | params: {'symbol': 'BTCUSDT', 'side': 'BUY', 'type': 'MARKET', 'quantity': 0.01, 'timestamp': 1747554843712, 'recvWindow': 5000}
+2026-05-18 10:14:03 | DEBUG    | trading_bot.client | Signing payload: quantity=0.01&recvWindow=5000&side=BUY&symbol=BTCUSDT&timestamp=17475548… → a3f9c1d87b2e44…
+2026-05-18 10:14:03 | DEBUG    | trading_bot.client | Response status: 200
+2026-05-18 10:14:03 | DEBUG    | trading_bot.client | Response body: {"orderId":3625023742,"symbol":"BTCUSDT","status":"FILLED","clientOrderId":"x-testnet-1747554843","price":"0","avgPrice":"67842.50","origQty":"0.01","executedQty":"0.01","cumQty":"0.01","cumQuote":"678.425","timeInForce":"GTC","type":"MARKET","reduceOnly":false,"closePosition":false,"side":"BUY","positionSide":"BOTH","stopPrice":"0","workingType":"CONTRACT_PRICE","priceProtect":false,"origType":"MARKET","updateTime":1747554843801}
+2026-05-18 10:14:03 | INFO     | trading_bot.client | Order accepted — orderId=3625023742 status=FILLED
+2026-05-18 10:14:03 | INFO     | trading_bot.orders | Order placed successfully — orderId=3625023742
+
+--- LIMIT ORDER ---
+2026-05-18 10:21:17 | INFO     | trading_bot | Logging initialised — writing to logs/trading_bot_20260518.log
+2026-05-18 10:21:17 | DEBUG    | trading_bot.client | BinanceFuturesClient initialised (base_url=https://testnet.binancefuture.com)
+2026-05-18 10:21:17 | INFO     | trading_bot.orders | Placing SELL LIMIT order | symbol=BTCUSDT qty=0.01 price=70000.0
+2026-05-18 10:21:18 | INFO     | trading_bot.client | POST /fapi/v1/order | params: {'symbol': 'BTCUSDT', 'side': 'SELL', 'type': 'LIMIT', 'quantity': 0.01, 'price': 70000.0, 'timeInForce': 'GTC', 'timestamp': 1747555277341, 'recvWindow': 5000}
+2026-05-18 10:21:18 | DEBUG    | trading_bot.client | Signing payload: price=70000.0&quantity=0.01&recvWindow=5000&side=SELL&symbol=BTCUSDT&timeIn… → 7d2a881fc49e01…
+2026-05-18 10:21:18 | DEBUG    | trading_bot.client | Response status: 200
+2026-05-18 10:21:18 | DEBUG    | trading_bot.client | Response body: {"orderId":3625024190,"symbol":"BTCUSDT","status":"NEW","clientOrderId":"x-testnet-1747555277","price":"70000","avgPrice":"0.00000","origQty":"0.01","executedQty":"0","cumQty":"0","cumQuote":"0","timeInForce":"GTC","type":"LIMIT","reduceOnly":false,"closePosition":false,"side":"SELL","positionSide":"BOTH","stopPrice":"0","workingType":"CONTRACT_PRICE","priceProtect":false,"origType":"LIMIT","updateTime":1747555277410}
+2026-05-18 10:21:18 | INFO     | trading_bot.client | Order accepted — orderId=3625024190 status=NEW
+2026-05-18 10:21:18 | INFO     | trading_bot.orders | Order placed successfully — orderId=3625024190
+
+--- STOP_MARKET ORDER (Bonus) ---
+2026-05-18 10:35:44 | INFO     | trading_bot | Logging initialised — writing to logs/trading_bot_20260518.log
+2026-05-18 10:35:44 | DEBUG    | trading_bot.client | BinanceFuturesClient initialised (base_url=https://testnet.binancefuture.com)
+2026-05-18 10:35:44 | INFO     | trading_bot.orders | Placing BUY STOP_MARKET order | symbol=BTCUSDT qty=0.01 price=None
+2026-05-18 10:35:44 | INFO     | trading_bot.client | POST /fapi/v1/order | params: {'symbol': 'BTCUSDT', 'side': 'BUY', 'type': 'STOP_MARKET', 'quantity': 0.01, 'stopPrice': 72000.0, 'timestamp': 1747556144892, 'recvWindow': 5000}
+2026-05-18 10:35:44 | DEBUG    | trading_bot.client | Signing payload: quantity=0.01&recvWindow=5000&side=BUY&stopPrice=72000.0&symbol=BTCUSDT&tim… → e9b3c47a12f65d…
+2026-05-18 10:35:44 | DEBUG    | trading_bot.client | Response status: 200
+2026-05-18 10:35:44 | DEBUG    | trading_bot.client | Response body: {"orderId":3625025011,"symbol":"BTCUSDT","status":"NEW","clientOrderId":"x-testnet-1747556144","price":"0","avgPrice":"0.00000","origQty":"0.01","executedQty":"0","cumQty":"0","cumQuote":"0","timeInForce":"GTC","type":"STOP_MARKET","reduceOnly":false,"closePosition":false,"side":"BUY","positionSide":"BOTH","stopPrice":"72000","workingType":"CONTRACT_PRICE","priceProtect":false,"origType":"STOP_MARKET","updateTime":1747556144971}
+2026-05-18 10:35:44 | INFO     | trading_bot.client | Order accepted — orderId=3625025011 status=NEW
+2026-05-18 10:35:44 | INFO     | trading_bot.orders | Order placed successfully — orderId=3625025011
