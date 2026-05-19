@@ -1,6 +1,10 @@
 {
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist",
   "functions": {
-    "api/*.py": { "runtime": "python3.9" }
+    "api/*.py": {
+      "excludeFiles": "{api/_shared.py}"
+    }
   },
   "rewrites": [
     { "source": "/api/(.*)", "destination": "/api/$1" },
