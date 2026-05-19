@@ -3,7 +3,7 @@
   "outputDirectory": "dist",
   "functions": {
     "api/*.py": {
-      "excludeFiles": "{api/_shared.py}"
+      "runtime": "python3.9"
     }
   },
   "rewrites": [
